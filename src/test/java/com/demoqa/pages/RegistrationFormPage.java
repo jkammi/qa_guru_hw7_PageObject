@@ -20,7 +20,16 @@ public class RegistrationFormPage {
             emailInput = $("#userForm #userEmail"),
             genderInput = $("#genterWrapper"),
             subjectsInput = $("#subjectsInput"),
-            hobbiesInput = $("#hobbiesWrapper");
+            hobbiesInput = $("#hobbiesWrapper"),
+            imageInput = $("#uploadPicture"),
+            adressInput = $("#currentAddress"),
+            stateInput = $("#state"),
+            stateCityInput = $("#stateCity-wrapper"),
+            cityInput = $("#city"),
+            submitButton = $("#submit");
+
+
+
 
     // Actions
     public RegistrationFormPage openPage() {
@@ -29,78 +38,91 @@ public class RegistrationFormPage {
 //        zoom(0.7);
         executeJavaScript("$('footer').remove()");
         executeJavaScript("$('#fixedban').remove()");
-
         return this;
     }
 
     public RegistrationFormPage setFirstName(String value) {
         firstNameInput.setValue(value);
-
         return this;
     }
 
     public RegistrationFormPage clearFirstName() {
         firstNameInput.clear();
-
         return this;
-
     }
 
     public RegistrationFormPage setLastName(String value) {
         lastNameInput.setValue(value);
-
         return this;
     }
 
     public RegistrationFormPage setEmail(String value) {
         emailInput.setValue(value);
-
         return this;
     }
 
     public RegistrationFormPage setGender(String value) {
         genderInput.$(byText(value)).click();
-
         return this;
     }
 
     public RegistrationFormPage setNumber(String value) {
         $("#userForm #userNumber").setValue(value);
-
         return this;
     }
 
     public RegistrationFormPage setBirthDate(String day, String month, String year) {
         $("#dateOfBirthInput").click();
         calendarComponent.setDate(day, month, year);
-
         return this;
     }
 
     public RegistrationFormPage setSubjects(String value) {
         subjectsInput.setValue(value).pressEnter();
-
         return this;
     }
 
     public RegistrationFormPage setHobbies(String value) {
         hobbiesInput.$(byText(value)).click();
-
         return this;
     }
 
+    public RegistrationFormPage setImage(String value) {
+        imageInput.setValue(value);
+        return this;
+    }
 
-    // assertions
+    public RegistrationFormPage setAddress(String value) {
+        adressInput.setValue(value);
+        return this;
+    }
+
+    public RegistrationFormPage clickSubmit() {
+        submitButton.scrollIntoView(false).click();
+        return this;
+    }
+
+    public RegistrationFormPage setState(String value) {
+        stateInput.scrollTo().click();
+        stateCityInput.$(byText(value)).click();
+        return this;
+    }
+
+    public RegistrationFormPage setCity(String value) {
+        cityInput.click();
+        stateCityInput.$(byText(value)).click();
+        return this;
+    }
+
+    // Assertions
 
     public RegistrationFormPage checkResultsTableVisible() {
         resultsModal.checkVisible();
-
         return this;
     }
 
     public RegistrationFormPage checkResult(String key, String value) {
         resultsModal.checkResult(key, value);
-
         return this;
     }
 

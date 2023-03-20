@@ -29,32 +29,25 @@ public class RegistrationFormWithPageObjectsTests {
                 .setEmail("alex@egorov.com")
                 .setGender("Other")
                 .setNumber("1234567890")
-                .setBirthDate("30", "July", "2008");
-
-//        sleep(500);
-
-        registrationFormPage.openPage()
-                .setSubjects("Biology");
-//                .setHobbies("Sports");
-
-//        $("#uploadPicture").setValue("src\\test\\resources\\Circle-icon.png");
-//        $("#currentAddress").setValue("my address 123");
-//        $("#state").scrollTo().click();
-//        $("#stateCity-wrapper").$(byText("Haryana")).click();
-//        $("#city").click();
-//        $("#stateCity-wrapper").$(byText("Karnal")).click();
-        $("#submit").scrollIntoView(false).click();
-//        sleep(500);
-
-//        assertions
+                .setBirthDate("30", "July", "2008")
+                .setSubjects("English")
+                .setHobbies("Sports")
+                .setImage("C:\\Users\\79518\\Java_projects\\qa_guru_hw7_PageObject\\src\\test\\resources\\Circle-icon.png")
+                .setAddress("my address 123")
+                .setState("Haryana")
+                .setCity("Karnal")
+                .clickSubmit();
 
         registrationFormPage.checkResultsTableVisible()
                 .checkResult("Student Name", "Alex Egorov")
                 .checkResult("Student Email", "alex@egorov.com")
                 .checkResult("Gender", "Other")
                 .checkResult("Mobile", "1234567890")
-                .checkResult("Date of Birth", "30 July,2008");
-
+                .checkResult("Date of Birth", "30 July,2008")
+                .checkResult("Subjects", "English")
+                .checkResult("Hobbies", "Sports")
+                .checkResult("Picture", "Circle-icon.png")
+                .checkResult("Address", "my address 123")
+                .checkResult("State and City", "Haryana Karnal");
     }
     }
-
