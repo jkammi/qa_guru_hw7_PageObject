@@ -1,6 +1,6 @@
 package com.demoqa.pages;
 
-import git add .com.codeborne.selenide.SelenideElement;
+import com.codeborne.selenide.SelenideElement;
 import com.demoqa.pages.components.CalendarComponent;
 import com.demoqa.pages.components.ResultsModal;
 
