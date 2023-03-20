@@ -1,6 +1,6 @@
 package com.demoqa.pages;
 
-import com.codeborne.selenide.SelenideElement;
+import git add .com.codeborne.selenide.SelenideElement;
 import com.demoqa.pages.components.CalendarComponent;
 import com.demoqa.pages.components.ResultsModal;
 
@@ -29,13 +29,10 @@ public class RegistrationFormPage {
             submitButton = $("#submit");
 
 
-
-
     // Actions
     public RegistrationFormPage openPage() {
         open("/automation-practice-form");
         $(".practice-form-wrapper").shouldHave(text(TITLE_TEXT));
-//        zoom(0.7);
         executeJavaScript("$('footer').remove()");
         executeJavaScript("$('#fixedban').remove()");
         return this;
@@ -126,4 +123,4 @@ public class RegistrationFormPage {
         return this;
     }
 
-    }
+}

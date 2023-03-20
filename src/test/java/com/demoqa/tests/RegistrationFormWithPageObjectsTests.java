@@ -50,4 +50,4 @@ public class RegistrationFormWithPageObjectsTests {
                 .checkResult("Address", "my address 123")
                 .checkResult("State and City", "Haryana Karnal");
     }
-    }
+}
