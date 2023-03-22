@@ -79,8 +79,10 @@ public class RegistrationFormPage {
         return this;
     }
 
-    public RegistrationFormPage setHobbies(String value) {
-        hobbiesInput.$(byText(value)).click();
+    public RegistrationFormPage setListOfHobbies(String[] values) {
+        for (int i = 0; i < values.length; ++i) {
+            hobbiesInput.$(byText(values[i])).click();
+        }
         return this;
     }
 
