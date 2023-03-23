@@ -1,7 +1,6 @@
 package com.demoqa.tests;
 
 import com.demoqa.pages.RegistrationFormPage;
-import com.demoqa.utils.RandomUtils;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -10,11 +9,13 @@ public class RegistrationFormWithFakerDataTests extends TestBase {
     RegistrationFormPage registrationFormPage = new RegistrationFormPage();
 
     FakeData fakeData = new FakeData();
-    RandomUtils randomUtils = new RandomUtils();
 
     @Test
     @DisplayName("Registration Test")
     void fillFormTest() {
+
+        fakeData.chooseRandomCityOfState();
+        String stateAndCity = fakeData.getStateAndCity();
 
         registrationFormPage.openPage()
                 .setFirstName(fakeData.firstName)
@@ -36,11 +37,11 @@ public class RegistrationFormWithFakerDataTests extends TestBase {
                 .checkResult("Student Email", fakeData.email)
                 .checkResult("Gender", fakeData.gender)
                 .checkResult("Mobile", fakeData.number)
-                .checkResult("Date of Birth", fakeData.dateOfBirthResult)
+                .checkResult("Date of Birth", fakeData.dateOfBirth)
                 .checkResult("Subjects", fakeData.subject)
                 .checkResult("Hobbies", fakeData.hobbiesResult)
-                .checkResult("Picture", fakeData.imagePath)
+                .checkResult("Picture", fakeData.imageName)
                 .checkResult("Address", fakeData.address)
-                .checkResult("State and City", fakeData.stateAndCityResult);
+                .checkResult("State and City", stateAndCity);
     }
 }

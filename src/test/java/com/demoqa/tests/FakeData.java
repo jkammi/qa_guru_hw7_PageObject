@@ -5,6 +5,7 @@ import com.github.javafaker.Faker;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
+import java.io.File;
 
 import static com.demoqa.utils.RandomUtils.*;
 
@@ -13,6 +14,8 @@ public class FakeData extends TestBase {
     Faker faker = new Faker();
 
     String imagePath = "C:\\Users\\79518\\Java_projects\\qa_guru_hw7_PageObject\\src\\test\\resources\\Circle-icon.png";
+    File imageFile = new File(imagePath);
+    String imageName = imageFile.getName();
 
     String[] gendersList = {"Male", "Female", "Other"};
     String[] subjectsList = {"Hindi", "English", "Maths", "Physics",
@@ -39,15 +42,16 @@ public class FakeData extends TestBase {
     String day = dayFormat.format(birthDate);
     String month = monthFormat.format(birthDate);
     String year = yearFormat.format(birthDate);
-    String dateOfBirthResult = day + " " + month + "," + year;
+    String dateOfBirth = day + " " + month + "," + year;
     String[] citiesNCR = {"Delhi", "Gurgaon", "Noida"};
     String[] citiesUttarPradesh = {"Agra", "Lucknow", "Merrut"};
     String[] citiesHaryana = {"Karnal", "Parnipat"};
     String[] citiesRajastan = {"Jaipur", "Jaiselmer"};
+
     String state = getRandomItemFromArray(statesList);
     String city = "";
 
-    public void chooseRandomCityOfState() {
+    public Object chooseRandomCityOfState() {
         if (state.equals("NCR")) {
             city = getRandomItemFromArray(citiesNCR);
         } else if (state.equals("Uttar Pradesh")) {
@@ -57,6 +61,11 @@ public class FakeData extends TestBase {
         } else if (state.equals("Rajastan")) {
             city = getRandomItemFromArray(citiesRajastan);
         }
+        return city;
     }
-    String stateAndCityResult = state + " " + city;
+
+    public String getStateAndCity() {
+        String stateAndCity = state + " " + city;
+        return stateAndCity;
+    }
 }
