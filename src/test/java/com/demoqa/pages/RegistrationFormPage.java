@@ -8,6 +8,12 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
 public class RegistrationFormPage {
 
     // Elements
@@ -40,11 +46,6 @@ public class RegistrationFormPage {
 
     public RegistrationFormPage setFirstName(String value) {
         firstNameInput.setValue(value);
-        return this;
-    }
-
-    public RegistrationFormPage clearFirstName() {
-        firstNameInput.clear();
         return this;
     }
 
@@ -85,7 +86,7 @@ public class RegistrationFormPage {
     }
 
     public RegistrationFormPage setImage(String value) {
-        imageInput.setValue(value);
+        imageInput.uploadFromClasspath(value);
         return this;
     }
 

@@ -28,7 +28,7 @@ public class RegistrationFormWithPageObjectsTests {
                 .setBirthDate("30", "July", "2008")
                 .setSubjects("English")
                 .setHobbies("Sports")
-                .setImage("C:\\Users\\79518\\Java_projects\\qa_guru_hw7_PageObject\\src\\test\\resources\\Circle-icon.png")
+                .setImage("Circle-icon.png")
                 .setAddress("my address 123")
                 .setState("Haryana")
                 .setCity("Karnal")
