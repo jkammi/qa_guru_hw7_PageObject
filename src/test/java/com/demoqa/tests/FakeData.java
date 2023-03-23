@@ -5,7 +5,6 @@ import com.github.javafaker.Faker;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
-import java.io.File;
 
 import static com.demoqa.utils.RandomUtils.*;
 
@@ -13,17 +12,14 @@ public class FakeData extends TestBase {
 
     Faker faker = new Faker();
 
-    String imagePath = "C:\\Users\\79518\\Java_projects\\qa_guru_hw7_PageObject\\src\\test\\resources\\Circle-icon.png";
-    File imageFile = new File(imagePath);
-    String imageName = imageFile.getName();
-
+    String imagePath = "Circle-icon.png";
     String[] gendersList = {"Male", "Female", "Other"};
     String[] subjectsList = {"Hindi", "English", "Maths", "Physics",
             "Chemistry", "Biology", "Computer Science", "Commerce",
             "Accounting", "Economics", "Arts", "Social Studies",
             "History", "Civics"};
     String[] hobbiesList = {"Sports", "Reading", "Music"};
-    String[] statesList = {"NCR", "Uttar Pradesh", "Haryana", "Rajastan"};
+    String[] statesList = {"NCR", "Uttar Pradesh", "Haryana", "Rajasthan"};
 
     public String firstName = faker.name().firstName(),
             lastName = faker.name().lastName(),
@@ -46,7 +42,7 @@ public class FakeData extends TestBase {
     String[] citiesNCR = {"Delhi", "Gurgaon", "Noida"};
     String[] citiesUttarPradesh = {"Agra", "Lucknow", "Merrut"};
     String[] citiesHaryana = {"Karnal", "Parnipat"};
-    String[] citiesRajastan = {"Jaipur", "Jaiselmer"};
+    String[] citiesRajasthan = {"Jaipur", "Jaiselmer"};
 
     String state = getRandomItemFromArray(statesList);
     String city = "";
@@ -58,8 +54,8 @@ public class FakeData extends TestBase {
             city = getRandomItemFromArray(citiesUttarPradesh);
         } else if (state.equals("Haryana")) {
             city = getRandomItemFromArray(citiesHaryana);
-        } else if (state.equals("Rajastan")) {
-            city = getRandomItemFromArray(citiesRajastan);
+        } else if (state.equals("Rajasthan")) {
+            city = getRandomItemFromArray(citiesRajasthan);
         }
         return city;
     }

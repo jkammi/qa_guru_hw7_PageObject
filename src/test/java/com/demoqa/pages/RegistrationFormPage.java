@@ -1,5 +1,6 @@
 package com.demoqa.pages;
 
+import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.SelenideElement;
 import com.demoqa.pages.components.CalendarComponent;
 import com.demoqa.pages.components.ResultsModal;
@@ -33,6 +34,10 @@ public class RegistrationFormPage {
     public RegistrationFormPage openPage() {
         open("/automation-practice-form");
         $(".practice-form-wrapper").shouldHave(text(TITLE_TEXT));
+        return this;
+    }
+
+    public RegistrationFormPage closeAds() {
         executeJavaScript("$('footer').remove()");
         executeJavaScript("$('#fixedban').remove()");
         return this;
@@ -40,11 +45,6 @@ public class RegistrationFormPage {
 
     public RegistrationFormPage setFirstName(String value) {
         firstNameInput.setValue(value);
-        return this;
-    }
-
-    public RegistrationFormPage clearFirstName() {
-        firstNameInput.clear();
         return this;
     }
 
@@ -87,7 +87,7 @@ public class RegistrationFormPage {
     }
 
     public RegistrationFormPage setImage(String value) {
-        imageInput.setValue(value);
+        imageInput.uploadFromClasspath(value);
         return this;
     }
 
