@@ -19,7 +19,7 @@ public class RegistrationFormWithPageObjectsTests {
     @Test
     @DisplayName("Registration Test")
     void fillFormTest() {
-        registrationFormPage.openPage()
+        registrationFormPage.openPage().closeAds()
                 .setFirstName("Alex")
                 .setLastName("Egorov")
                 .setEmail("alex@egorov.com")

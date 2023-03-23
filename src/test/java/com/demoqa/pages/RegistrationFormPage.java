@@ -33,6 +33,10 @@ public class RegistrationFormPage {
     public RegistrationFormPage openPage() {
         open("/automation-practice-form");
         $(".practice-form-wrapper").shouldHave(text(TITLE_TEXT));
+        return this;
+    }
+
+    public RegistrationFormPage closeAds() {
         executeJavaScript("$('footer').remove()");
         executeJavaScript("$('#fixedban').remove()");
         return this;
