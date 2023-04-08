@@ -53,3 +53,11 @@ task remote_test(type: Test) {
     }
 }
 
+sourceSets {
+    test {
+        java {
+            srcDirs = ["src"]
+        }
+    }
+}
+
