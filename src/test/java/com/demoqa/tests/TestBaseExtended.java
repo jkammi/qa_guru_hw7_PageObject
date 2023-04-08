@@ -32,3 +32,5 @@ public class TestBaseExtended {
         SelenideLogger.addListener("allureSelenide", new AllureSelenide());
     }
 }
+
+// hola
