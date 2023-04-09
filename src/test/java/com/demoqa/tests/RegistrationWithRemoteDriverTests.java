@@ -15,13 +15,13 @@ public class RegistrationWithRemoteDriverTests extends TestBaseExtended {
     void successfulRegistrationTest() {
         String userName = "Alex";
 
-//        step("Open form", () -> {
+        step("Open form", () -> {
             open("/automation-practice-form");
             $(".practice-form-wrapper").shouldHave(text("Student Registration Form"));
             executeJavaScript("$('#fixedban').remove()");
             executeJavaScript("$('footer').remove()");
-//        });
-//        step("Fill form", () -> {
+        });
+        step("Fill form", () -> {
             $("#firstName").setValue(userName);
             $("#lastName").setValue("Egorov");
             $("#userEmail").setValue("alex@egorov.com");
@@ -40,12 +40,12 @@ public class RegistrationWithRemoteDriverTests extends TestBaseExtended {
             $("#city").click();
             $("#stateCity-wrapper").$(byText("Delhi")).click();
             $("#submit").click();
-//        });
-//        step("Verify results", () -> {
+        });
+        step("Verify results", () -> {
             $(".modal-dialog").should(appear);
             $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));
             $(".table-responsive").shouldHave(text(userName), text("Egorov"),
                     text("alex@egorov.com"), text("1234567890"));
-//        });
+        });
     }
 }
