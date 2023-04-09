@@ -27,10 +27,10 @@ public class TestBaseExtended {
         Configuration.browserCapabilities = capabilities;
     }
 
-    @BeforeEach
-    void addListener() {
-        SelenideLogger.addListener("allureSelenide", new AllureSelenide());
-    }
-}
+//    @BeforeEach
+//    void addListener() {
+//        SelenideLogger.addListener("allureSelenide", new AllureSelenide());
+//    }
+//}
 
 // hola
