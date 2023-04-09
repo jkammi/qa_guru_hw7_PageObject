@@ -33,7 +33,8 @@ dependencies {
             'io.qameta.allure:allure-selenide:2.21.0',
             'com.github.javafaker:javafaker:1.0.2',
             'org.junit.jupiter:junit-jupiter:5.9.2',
-            'org.slf4j:slf4j-api:2.0.7'
+            'org.slf4j:slf4j-api:2.0.7',
+            'org.aspectj:aspectjweaver:1.9.9'
     )
 }
 
