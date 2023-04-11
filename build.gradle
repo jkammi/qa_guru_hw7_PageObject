@@ -25,7 +25,7 @@ allure {
 }
 
 dependencies {
-    testImplementation (
+    testImplementation(
             "org.aspectj:aspectjweaver:1.9.19",
             "com.codeborne:selenide:6.11.2",
             "io.qameta.allure:allure-selenide:$allureVersion",
@@ -74,5 +74,11 @@ task many_properties_test(type: Test) {
 task hello_test(type: Test) {
     useJUnitPlatform {
         includeTags("hello")
+    }
+
+    task main_test(type: Test) {
+        useJUnitPlatform {
+            includeTags("main")
+        }
     }
 }
