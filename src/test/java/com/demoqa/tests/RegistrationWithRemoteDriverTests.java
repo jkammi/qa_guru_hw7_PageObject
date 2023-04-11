@@ -9,7 +9,7 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
 
-@Tag("remote")
+@Tag("main")
 public class RegistrationWithRemoteDriverTests extends TestBaseExtended {
     @Test
     void successfulRegistrationTest() {

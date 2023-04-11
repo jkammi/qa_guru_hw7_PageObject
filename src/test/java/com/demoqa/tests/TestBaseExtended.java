@@ -15,7 +15,6 @@ import java.util.Map;
 public class TestBaseExtended {
 
     @BeforeAll
-    @Tag("main")
     static void configure() {
         // parametrized values:
         String websiteName = System.getProperty("website", "google.com");
