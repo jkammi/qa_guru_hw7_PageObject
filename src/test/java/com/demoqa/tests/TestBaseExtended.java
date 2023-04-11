@@ -12,9 +12,12 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import java.util.Map;
 
 public class TestBaseExtended {
+
     @BeforeAll
     static void configure() {
-        Configuration.baseUrl = "https://demoqa.com";
+        String websiteName = System.getProperty("website", "google.com");
+
+        Configuration.baseUrl = websiteName;
         Configuration.browserSize = "1920x1080";
         Configuration.browserPosition = "0x0";
         Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";

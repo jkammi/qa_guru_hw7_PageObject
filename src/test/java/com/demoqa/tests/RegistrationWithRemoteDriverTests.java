@@ -14,7 +14,6 @@ public class RegistrationWithRemoteDriverTests extends TestBaseExtended {
     @Test
     void successfulRegistrationTest() {
         String userName = "Alex";
-
         step("Open form", () -> {
             open("/automation-practice-form");
             $(".practice-form-wrapper").shouldHave(text("Student Registration Form"));
