@@ -69,10 +69,10 @@ task hello_test(type: Test) {
     useJUnitPlatform {
         includeTags("hello")
     }
+}
 
-    task main_test(type: Test) {
-        useJUnitPlatform {
-            includeTags("main")
-        }
+task main_test(type: Test) {
+    useJUnitPlatform {
+        includeTags("main")
     }
 }

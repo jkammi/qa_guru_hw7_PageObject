@@ -7,7 +7,6 @@ import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Tag;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.util.Map;
@@ -17,8 +16,8 @@ public class TestBaseExtended {
     @BeforeAll
     static void configure() {
         // parametrized values:
-        String websiteName = System.getProperty("website", "google.com");
-        String remoteBrowserName = System.getProperty("remote_browser", "abc.com");
+        String websiteName = System.getProperty("website", "https://demoqa.com");
+        String remoteBrowserName = System.getProperty("remote_browser", "selenoid.autotests.cloud");
         String browserName = System.getProperty("browser_name", "chrome");
         String browserVersion = System.getProperty("browser_version", "100.0");
         String screenResolution = System.getProperty("screen_resolution", "1920x1080");
@@ -41,6 +40,7 @@ public class TestBaseExtended {
     void addListener() {
         SelenideLogger.addListener("allureSelenide", new AllureSelenide());
     }
+
     @AfterEach
     void addAttachments() {
         Attach.screenshotAs("Last screenshot");
